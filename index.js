@@ -1,69 +1,69 @@
-  var spreadsheet = "https://docs.google.com/spreadsheets/d/1U96rriFYdKYyGwalw9LwHHMpw-rPoJb4Uu9zDRInJFQ/edit#gid=0";
+var spreadsheet = "https://docs.google.com/spreadsheets/d/1U96rriFYdKYyGwalw9LwHHMpw-rPoJb4Uu9zDRInJFQ/edit#gid=0";
 
-    $(document).ready(function(){
-      $('#pitchers').sheetrock({
-        url: spreadsheet, 
-        query: "select A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T",
-        callback: function draw(error, options, response) {
-  if (error) {
-    console.log('fail');
-  }
-  else{
-    console.log(response.html);
-  }
+$(document).ready(function(){
+  $('#pitchers').sheetrock({
+    url: spreadsheet, 
+    query: "select A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T",
+    callback: function draw(error, options, response) {
+if (error) {
+console.log('fail');
 }
-    });
-  setTimeout(function(){
-   
-  $("table").tablesorter({
-    theme : "bootstrap",
+else{
+console.log(response.html);
+}
+}
+});
+setTimeout(function(){
 
-    widthFixed: true,
+$("table").tablesorter({
+theme : "bootstrap",
 
-    // widget code contained in the jquery.tablesorter.widgets.js file
-    // use the zebra stripe widget if you plan on hiding any rows (filter widget)
-    // the uitheme widget is NOT REQUIRED!
-    widgets : [ "filter", "columns", "zebra" ],
+widthFixed: true,
 
-    widgetOptions : {
-      // using the default zebra striping class name, so it actually isn't included in the theme variable above
-      // this is ONLY needed for bootstrap theming if you are using the filter widget, because rows are hidden
-      zebra : ["even", "odd"],
+// widget code contained in the jquery.tablesorter.widgets.js file
+// use the zebra stripe widget if you plan on hiding any rows (filter widget)
+// the uitheme widget is NOT REQUIRED!
+widgets : [ "filter", "columns", "zebra" ],
 
-      // class names added to columns when sorted
-      columns: [ "primary", "secondary", "tertiary" ],
+widgetOptions : {
+  // using the default zebra striping class name, so it actually isn't included in the theme variable above
+  // this is ONLY needed for bootstrap theming if you are using the filter widget, because rows are hidden
+  zebra : ["even", "odd"],
 
-      // reset filters button
-      filter_reset : ".reset",
+  // class names added to columns when sorted
+  columns: [ "primary", "secondary", "tertiary" ],
 
-      // extra css class name (string or array) added to the filter element (input or select)
-      filter_cssFilter: [
-        'form-control',
-        'form-control',
-        'form-control custom-select', // select needs custom class names :(
-        'form-control',
-        'form-control',
-        'form-control',
-        'form-control',
-        'form-control',
-        'form-control',
-        'form-control',
-        'form-control',
-        'form-control',
-        'form-control',
-        'form-control',
-        'form-control',
-        'form-control',
-        'form-control',
-        'form-control',
-        'form-control',
-        'form-control'
-        
-      ]
+  // reset filters button
+  filter_reset : ".reset",
 
-    }
-  });
-  }, 500); 
-    $("table").trigger("update");
-    console.log()
-  });
+  // extra css class name (string or array) added to the filter element (input or select)
+  filter_cssFilter: [
+    'form-control',
+    'form-control',
+    'form-control', 
+    'form-control',
+    'form-control',
+    'form-control',
+    'form-control',
+    'form-control',
+    'form-control',
+    'form-control',
+    'form-control',
+    'form-control',
+    'form-control',
+    'form-control',
+    'form-control',
+    'form-control',
+    'form-control',
+    'form-control',
+    'form-control',
+    'form-control'
+    
+  ]
+
+}
+});
+}, 500); 
+$("table").trigger("update");
+console.log()
+});
